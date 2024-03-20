@@ -1,0 +1,332 @@
+[gd_scene load_steps=35 format=3 uid="uid://dje06n7ox1yfe"]
+
+[ext_resource type="Texture2D" uid="uid://d2yy2umnisrmi" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-die-0.png" id="1_7exuw"]
+[ext_resource type="Script" path="res://SlimeMob/slime_mob.gd" id="1_jtws7"]
+[ext_resource type="Texture2D" uid="uid://t4k7yhybyhjm" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-die-1.png" id="2_gwr1t"]
+[ext_resource type="Texture2D" uid="uid://4of8slvw7bl0" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-attack-0.png" id="2_k2kde"]
+[ext_resource type="Texture2D" uid="uid://bfab0r5w12h0o" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-die-2.png" id="3_1j2ox"]
+[ext_resource type="Texture2D" uid="uid://cq2vg7cpdysgl" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-attack-1.png" id="3_meu64"]
+[ext_resource type="Texture2D" uid="uid://o60so4a6oki7" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-attack-2.png" id="4_6qwoh"]
+[ext_resource type="Texture2D" uid="uid://d2isvs33okx8b" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-die-3.png" id="4_aq5ve"]
+[ext_resource type="Texture2D" uid="uid://baj8ruw801u6i" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-idle-0.png" id="5_e41f0"]
+[ext_resource type="Texture2D" uid="uid://c17c0y3aafyk2" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-attack-3.png" id="5_tabhj"]
+[ext_resource type="Texture2D" uid="uid://gqm60l0nn0ck" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-idle-1.png" id="6_inpje"]
+[ext_resource type="Texture2D" uid="uid://diee4gqpo8pek" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-attack-4.png" id="6_q61dp"]
+[ext_resource type="Texture2D" uid="uid://c73rh6mkrki1x" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-hurt-0.png" id="7_a8nc0"]
+[ext_resource type="Texture2D" uid="uid://jrymswljvn8o" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-idle-2.png" id="7_xxr21"]
+[ext_resource type="Texture2D" uid="uid://dipjwqkln730b" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-idle-3.png" id="8_ev2ij"]
+[ext_resource type="Texture2D" uid="uid://0kdd37u88pqx" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-hurt-1.png" id="8_pfybr"]
+[ext_resource type="Texture2D" uid="uid://bnbdvmuei1fl4" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-hurt-2.png" id="9_0r3bu"]
+[ext_resource type="Texture2D" uid="uid://3pg1i6gipd7s" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-move-0.png" id="9_12s0j"]
+[ext_resource type="Texture2D" uid="uid://b1e1vglth24vn" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-hurt-3.png" id="10_7ccfa"]
+[ext_resource type="Texture2D" uid="uid://du4tleebkduww" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-move-1.png" id="10_yhtfn"]
+[ext_resource type="Texture2D" uid="uid://7a000xui3jf7" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-move-2.png" id="11_wkopv"]
+[ext_resource type="Texture2D" uid="uid://cqfnoo6dkbh86" path="res://oak_woods_v1.0/Slime/Individual Sprites/slime-move-3.png" id="12_0bpmp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_we5rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k2kde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_meu64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6qwoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tabhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q61dp")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_a8nc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pfybr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0r3bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ccfa")
+}],
+"loop": false,
+"name": &"Damage",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7exuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gwr1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1j2ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aq5ve")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_e41f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_inpje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xxr21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ev2ij")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_12s0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yhtfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wkopv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0bpmp")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnqbq"]
+size = Vector2(27.5, 21)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3alr"]
+radius = 205.789
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yunsv"]
+size = Vector2(34, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6e7d"]
+size = Vector2(36, 5)
+
+[sub_resource type="Animation" id="Animation_kirp5"]
+length = 0.714286
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Attack"]
+}
+
+[sub_resource type="Animation" id="Animation_8fknd"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Damage"]
+}
+
+[sub_resource type="Animation" id="Animation_6hqkr"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Death"]
+}
+
+[sub_resource type="Animation" id="Animation_11566"]
+length = 0.666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Idle"]
+}
+
+[sub_resource type="Animation" id="Animation_qw57w"]
+length = 0.571429
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Run"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqo03"]
+_data = {
+"Attack": SubResource("Animation_kirp5"),
+"Damage": SubResource("Animation_8fknd"),
+"Death": SubResource("Animation_6hqkr"),
+"Idle": SubResource("Animation_11566"),
+"Run": SubResource("Animation_qw57w")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp0ur"]
+size = Vector2(16.25, 18)
+
+[node name="SlimeMob" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_jtws7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -7)
+scale = Vector2(1.53873, 1.53873)
+sprite_frames = SubResource("SpriteFrames_we5rb")
+animation = &"Attack"
+autoplay = "Idle"
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.75, 0)
+shape = SubResource("RectangleShape2D_qnqbq")
+
+[node name="Detector" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_o3alr")
+
+[node name="DeathToMob" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathToMob"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_yunsv")
+
+[node name="DeathToPlayer" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathToPlayer"]
+shape = SubResource("RectangleShape2D_l6e7d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fqo03")
+}
+
+[node name="AttackeDirection" type="Node2D" parent="."]
+
+[node name="AttackRange" type="Area2D" parent="AttackeDirection"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackeDirection/AttackRange"]
+position = Vector2(-11.125, -7)
+shape = SubResource("RectangleShape2D_sp0ur")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
+[connection signal="body_entered" from="DeathToMob" to="." method="_on_death_body_entered"]
+[connection signal="body_entered" from="DeathToPlayer" to="." method="_on_death_2_body_entered"]
+[connection signal="body_entered" from="AttackeDirection/AttackRange" to="." method="_on_attack_range_body_entered"]
